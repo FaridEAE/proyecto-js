@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cajero Automático</title>
+    <link rel="stylesheet" href="./styles.css">
     <script src="./main.js" defer></script>
+    
+
 </head>
 <body>
     <div id="cajero">
-        <h2>Cajero Automático</h2>
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" placeholder="Ingrese su usuario">
-    
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" placeholder="Ingrese su contraseña">
-    
-        <button onclick="iniciarSesion()">Iniciar Sesión</button>
-        <button onclick="consultarSaldo()">Consultar Saldo</button>
-        <button onclick="ingresarMonto()">Ingresar Monto</button>
-        <button onclick="retirarMonto()">Retirar Monto</button>
+    <h2>Cajero Automático</h2>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" placeholder="Ingrese su usuario">
+
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" placeholder="Ingrese su contraseña">
+
+    <button onclick="iniciarSesion()">Iniciar Sesión</button>
+    <button onclick="consultarSaldo()">Consultar Saldo</button>
+    <button onclick="ingresarMonto()">Ingresar Monto</button>
+    <button onclick="retirarMonto()">Retirar Monto</button>
     
         <div id="resultado"></div>
     </div>

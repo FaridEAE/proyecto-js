@@ -29,18 +29,23 @@ const usuarios = {
 
     function ingresarMonto() {
         if (usuarioActual) {
-            const monto = parseFloat(prompt('Ingrese el monto a depositar:'));
-            if (!isNaN(monto) && monto > 0) {
-                usuarios[usuarioActual].saldo += monto;
-                mostrarResultado(`Se ha ingresado $${monto} a su cuenta.`);
+            const monto = parseFloat(prompt('Ingrese el monto a depositar (entre $10 y $990):'));
+            const saldoActual = usuarios[usuarioActual].saldo;
+
+            if (!isNaN(monto) && monto >= 10 && monto <= 990) {
+                if (saldoActual + monto <= 990) {
+                    usuarios[usuarioActual].saldo += monto;
+                    mostrarResultado(`Se ha ingresado $${monto} a su cuenta.`);
+                } else {
+                    mostrarResultado('El saldo máximo permitido es $990. Ingrese un monto menor.');
+                }
             } else {
-                mostrarResultado('Ingrese un monto válido.');
+                mostrarResultado('Ingrese un monto válido (entre $10 y $990).');
             }
         } else {
             mostrarResultado('Inicie sesión para ingresar monto.');
         }
     }
-
     function retirarMonto() {
         if (usuarioActual) {
             const monto = parseFloat(prompt('Ingrese el monto a retirar:'));
